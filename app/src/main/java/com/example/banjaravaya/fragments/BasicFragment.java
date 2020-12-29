@@ -1,5 +1,7 @@
 package com.example.banjaravaya.fragments;
 
+import android.annotation.SuppressLint;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -24,11 +27,12 @@ import java.util.List;
 public class BasicFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
     List<String> heights = Arrays.asList("cm", "ft");
-    List<String> profileCreatedBy = Arrays.asList("Father", "mother");
-    List<String> profileCratedFor = Arrays.asList("Daughter", "Son");
-    List<String> motherTongue = Arrays.asList("Lambadi", "Gormati");
-    List<String> martialStatus = Arrays.asList("Single", "Married", "Divorced");
-    List<String> physicalStatus = Arrays.asList("Normal", "Physically challenged");
+    List<String> profileCreatedByList = Arrays.asList("Father", "mother");
+    List<String> profileCreatedForList = Arrays.asList("Daughter", "Son");
+    List<String> motherTongueList = Arrays.asList("Lambadi", "Gormati");
+    List<String> martialStatusList = Arrays.asList("Single", "Married", "Divorced");
+    List<String> physicalStatusList = Arrays.asList("Normal", "Physically challenged");
+    String height, profileCreatedBy, profileCreatedFor, motherTongue, martialStatus, physicalStatus;
 
     public BasicFragment() {
         // Required empty public constructor
@@ -59,23 +63,23 @@ public class BasicFragment extends Fragment implements AdapterView.OnItemSelecte
         heightAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         heightSpinner.setAdapter(heightAdapter);
 
-        ArrayAdapter profileCreatedByAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, profileCreatedBy);
+        ArrayAdapter profileCreatedByAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, profileCreatedByList);
         profileCreatedByAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         profileCreatedBySpinner.setAdapter(profileCreatedByAdapter);
 
-        ArrayAdapter profileCreatedForAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, profileCratedFor);
+        ArrayAdapter profileCreatedForAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, profileCreatedForList);
         profileCreatedForAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         profileCreatedForSpinner.setAdapter(profileCreatedForAdapter);
 
-        ArrayAdapter motherTongueAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, motherTongue);
+        ArrayAdapter motherTongueAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, motherTongueList);
         motherTongueAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         motherTongueSpinner.setAdapter(motherTongueAdapter);
 
-        ArrayAdapter martialStatusAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, martialStatus);
+        ArrayAdapter martialStatusAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, martialStatusList);
         martialStatusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         martialStatusSpinner.setAdapter(martialStatusAdapter);
 
-        ArrayAdapter physicalStatusAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, physicalStatus);
+        ArrayAdapter physicalStatusAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, physicalStatusList);
         physicalStatusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         physicalStatusSpinner.setAdapter(physicalStatusAdapter);
 
@@ -100,7 +104,7 @@ public class BasicFragment extends Fragment implements AdapterView.OnItemSelecte
                 Log.i("Basic Details", basic);
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayout, new ViewFragment(basic));
+                fragmentTransaction.replace(R.id.fragmentLayout, new ProfessionalInfoFragment());
                 fragmentTransaction.commit();
             }
         });
@@ -108,9 +112,39 @@ public class BasicFragment extends Fragment implements AdapterView.OnItemSelecte
         return view;
     }
 
+    @SuppressLint("NonConstantResourceId")
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
     @Override
-    public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
-        Toast.makeText(getContext(), heights.get(position), Toast.LENGTH_LONG).show();
+    public void onItemSelected(AdapterView<?> adapterView, View arg1, int position, long id) {
+        switch (adapterView.getId()) {
+            case R.id.heightSpinner:
+                height = heights.get(position);
+                Log.i("height", height);
+                break;
+            case R.id.profileCreatedBySpinner:
+                profileCreatedBy = profileCreatedByList.get(position);
+                Log.i("profile created by", profileCreatedBy);
+                break;
+            case R.id.profileCreatedForSpinner:
+                profileCreatedFor = profileCreatedForList.get(position);
+                Log.i("profile created for", profileCreatedFor);
+                break;
+            case R.id.motherTongueSpinner:
+                motherTongue = motherTongueList.get(position);
+                Log.i("mother tongue", motherTongue);
+                break;
+            case R.id.martialStatusSpinner:
+                martialStatus = martialStatusList.get(position);
+                Log.i("martial status", martialStatus);
+                break;
+            case R.id.physicalStatusSpinner:
+                physicalStatus = physicalStatusList.get(position);
+                Log.i("physical status", physicalStatus);
+                break;
+            default:
+                Log.e("Unknown spinner id", adapterView.getId() + "");
+        }
+
     }
 
     @Override
