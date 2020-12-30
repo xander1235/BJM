@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:background="@drawable/rounded_corner_edit_text"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".fragments.BasicFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Family Details:"
+        android:textColor="#0E0E0E"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#B5654C" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/familyTypeText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Family Type"
+                    android:layout_weight="0.4"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="  :"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp"
+                    android:layout_weight="0.05"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/familyTypeSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.55"
+                    android:dropDownSelector="@android:drawable/alert_dark_frame" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/familyStatusText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Family Status"
+                    android:layout_weight="0.4"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="  :"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp"
+                    android:layout_weight="0.05"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/familyStatusSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.55"
+                    android:dropDownSelector="@android:drawable/alert_dark_frame" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/motherOccupationText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Mother's Occupation"
+                    android:layout_weight="0.4"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="  :"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp"
+                    android:layout_weight="0.05"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/motherOccupation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.55"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/rounded_corner_edit_text"
+                    android:hint="First name"
+                    android:paddingLeft="5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fatherOccupationText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Father Occupation"
+                    android:layout_weight="0.4"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="  :"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp"
+                    android:layout_weight="0.05"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/fatherOccupation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.55"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/rounded_corner_edit_text"
+                    android:hint="First name"
+                    android:paddingLeft="5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/familyOriginText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Family Origin"
+                    android:layout_weight="0.4"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="  :"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp"
+                    android:layout_weight="0.05"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/familyOrigin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.55"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/rounded_corner_edit_text"
+                    android:hint="First name"
+                    android:paddingLeft="5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/brothersText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="No of Brothers"
+                    android:layout_weight="0.4"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="  :"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp"
+                    android:layout_weight="0.05"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/brothersSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.55"
+                    android:dropDownSelector="@android:drawable/alert_dark_frame" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/brothersMarriedText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Brothers Married"
+                    android:layout_weight="0.4"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="  :"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp"
+                    android:layout_weight="0.05"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/brothersMarriedSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.55"
+                    android:dropDownSelector="@android:drawable/alert_dark_frame" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sistersText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="No of Sisters"
+                    android:layout_weight="0.4"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="  :"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp"
+                    android:layout_weight="0.05"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/sistersSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.55"
+                    android:dropDownSelector="@android:drawable/alert_dark_frame" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sistersMarriedText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Sisters Married"
+                    android:layout_weight="0.4"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="  :"
+                    android:textColor="#0E0E0E"
+                    android:textSize="18sp"
+                    android:layout_weight="0.05"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/sistersMarriedSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.55"
+                    android:dropDownSelector="@android:drawable/alert_dark_frame" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/aboutMyFamilyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About My Family:"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="#0E0E0E"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/aboutMyFamily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="55dp"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:gravity="start|top"
+                android:background="@drawable/rounded_corner_edit_text"
+                android:hint="First name"
+                android:paddingLeft="5dp" />
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/rounded_corner_edit_text"
+                android:text="Save" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:padding="5dp"
+                android:text=" Note: All the fields are required to fill, Please fill all the details." />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

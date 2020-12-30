@@ -1,4 +1,4 @@
-package com.example.banjaravaya;
+package com.example.banjaravaya.activities;
 
 import android.os.Bundle;
 
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.banjaravaya.R;
 import com.example.banjaravaya.fragments.BasicFragment;
 
 public class ProfileActivity extends AppCompatActivity {

@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.banjaravaya.activities.ProfileActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText username, password;

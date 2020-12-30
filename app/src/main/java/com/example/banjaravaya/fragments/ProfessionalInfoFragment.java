@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.banjaravaya.R;
+import com.example.banjaravaya.pojos.requests.ReqAddProfessionalInfo;
 
 import java.util.Arrays;
 import java.util.List;
@@ -83,15 +84,21 @@ public class ProfessionalInfoFragment extends Fragment implements AdapterView.On
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("Basic Details", educationDetail.getText().toString());
-                Log.i("Basic Details", occupationDetail.getText().toString());
-                Log.i("Basic Details", college.getText().toString());
-                String basic = educationDetail.getText().toString() + " : " + occupationDetail.getText().toString() + " : " + college.getText().toString();
+                ReqAddProfessionalInfo reqAddProfessionalInfo = ReqAddProfessionalInfo.builder()
+                        .education(education)
+                        .educationDetails(educationDetail.getText().toString())
+                        .employedIn(employedIn)
+                        .occupation(occupation)
+                        .occupationDetails(occupationDetail.getText().toString())
+                        .currencyType(currencyType)
+                        .annualIncome(annualIncome)
+                        .college(college.getText().toString())
+                        .build();
 
-                Log.i("Basic Details", basic);
+                Log.i("Professional Info", reqAddProfessionalInfo.toString());
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayout, new ViewFragment(basic));
+                fragmentTransaction.replace(R.id.fragmentLayout, new LocationReligiousHabitsFragment());
                 fragmentTransaction.commit();
             }
         });

@@ -12,7 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
@@ -20,6 +19,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.banjaravaya.R;
+import com.example.banjaravaya.pojos.requests.ReqAddBasicDetails;
 
 import java.util.Arrays;
 import java.util.List;
@@ -32,6 +32,7 @@ public class BasicFragment extends Fragment implements AdapterView.OnItemSelecte
     List<String> motherTongueList = Arrays.asList("Lambadi", "Gormati");
     List<String> martialStatusList = Arrays.asList("Single", "Married", "Divorced");
     List<String> physicalStatusList = Arrays.asList("Normal", "Physically challenged");
+
     String height, profileCreatedBy, profileCreatedFor, motherTongue, martialStatus, physicalStatus;
 
     public BasicFragment() {
@@ -94,14 +95,20 @@ public class BasicFragment extends Fragment implements AdapterView.OnItemSelecte
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("Basic Details", fname.getText().toString());
-                Log.i("Basic Details", sname.getText().toString());
-                Log.i("Basic Details", email.getText().toString());
-                Log.i("Basic Details", hght.getText().toString());
-                Log.i("Basic Details", dob.getText().toString());
-                String basic = fname.getText().toString() + " : " + sname.getText().toString() + " : " + email.getText().toString() + " : " + hght.getText().toString() + " : " + dob.getText().toString();
-
-                Log.i("Basic Details", basic);
+                ReqAddBasicDetails reqAddBasicDetails = ReqAddBasicDetails.builder()
+                        .firstName(fname.getText().toString())
+                        .surName(sname.getText().toString())
+                        .dob(dob.getText().toString())
+                        .email(email.getText().toString())
+                        .height(hght.getText().toString())
+                        .heightType(height)
+                        .profileCreatedBy(profileCreatedBy)
+                        .profileCreatedFor(profileCreatedFor)
+                        .motherTongue(motherTongue)
+                        .martialStatus(martialStatus)
+                        .physicalStatus(physicalStatus)
+                        .build();
+                Log.i("Basic Details", reqAddBasicDetails.toString());
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayout, new ProfessionalInfoFragment());

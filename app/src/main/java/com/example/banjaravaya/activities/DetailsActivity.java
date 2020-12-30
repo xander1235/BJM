@@ -1,8 +1,10 @@
-package com.example.banjaravaya;
+package com.example.banjaravaya.activities;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.banjaravaya.R;
 
 public class DetailsActivity extends AppCompatActivity {
 
